@@ -1,0 +1,33 @@
+Tham khao KTPM
+1. https://gitlab.com/ancool2312/final_software_architecture_ricestore
+2. https://gitlab.com/vietbac0967/booking-hotel-microservices
+[pro] 3. https://gitlab.com/kientrucphanmem_nhom27/Book_movie_tickets
+4. https://github.com/trungchanh2002/BTL_KTTKPM
+5. https://gitlab.com/Quang292001/booking-hotel
+
+Cac cong nghe thay yeu cau:
+1. JWT
+2. "Redis (1 object)"
+3. "Retry 3-5s (API call 1 service)"
+4. "Rate Limiter client (API call 1 service)"
+5. "Circuit Breaker"
+6. Docker All Service
+7. Docker Compose
+8. Jenkin
+9. Gitlab CI CD
+10. Agile-Scrum
+11. Deploy
+12. "Rate Limiter Server (API call 1 service)"
+13. Terraform or Ansible Concept and Example Basic
+
+NewsAndBlogWeb/
+├── authentication-service/        # Dịch vụ xác thực JWT
+├── redis-service/                  # Dịch vụ Redis
+├── api-gateway/                   # Cổng API
+├── news-service/                  # Dịch vụ quản lý tin tức
+├── blog-service/                  # Dịch vụ quản lý blog
+├── rate-limiter-client/           # Thư viện Rate Limiter cho client
+├── rate-limiter-server/           # Dịch vụ Rate Limiter
+├── circuit-breaker/               # Dịch vụ Circuit Breaker
+├── docker-compose.yml             # File docker-compose để triển khai tất cả các dịch vụ
+└── Jenkinsfile                    # File Jenkinsfile để triển khai CI/CD với Jenkins
