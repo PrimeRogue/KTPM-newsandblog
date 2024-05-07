@@ -2,6 +2,7 @@ package vn.edu.iuh.fit.controller;
 import vn.edu.iuh.fit.model.AuthRequest;
 import vn.edu.iuh.fit.model.UserInfo;
 import vn.edu.iuh.fit.service.JwtService;
+import vn.edu.iuh.fit.service.RedisService;
 import vn.edu.iuh.fit.service.UserInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -23,6 +24,9 @@ public class UserController {
 
   @Autowired
   private AuthenticationManager authenticationManager;
+
+  @Autowired
+  private RedisService redisService;
 
   @GetMapping("/welcome")
   public String welcome() {
@@ -50,7 +54,9 @@ public class UserController {
   public String authenticateAndGetToken(@RequestBody AuthRequest authRequest) {
     Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authRequest.getUsername(), authRequest.getPassword()));
     if (authentication.isAuthenticated()) {
-      return jwtService.generateToken(authRequest.getUsername());
+      String token = jwtService.generateToken(authRequest.getUsername());
+      redisService.saveToken(authRequest.getUsername(), token); // Lưu token vào Redis
+      return token;
     } else {
       throw new UsernameNotFoundException("invalid user request !");
     }
