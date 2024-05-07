@@ -21,6 +21,13 @@ Các tính năng sử dụng trong project:
 ## Hướng Dẫn Chạy Project
 
 ### 1. `Authentication Service với JWT`
++ Tạo user mới
+  ![.](demo-images/add-new-user.PNG)
++ Tạo token để đăng nhập
+  ![.](demo-images/generate-token.PNG)
++ Đăng nhập với quyền ADMIN
+  ![.](demo-images/login-admin.PNG)
+
 
 ### 2. `Redis database`
 + Setup Redis cho Window:

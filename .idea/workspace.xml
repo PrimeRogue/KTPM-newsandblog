@@ -5,17 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a5cb0c96-ba05-4930-9c2b-e60a4e24fd99" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/AuthenticationService/src/main/java/vn/edu/iuh/fit/config/RedisConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthenticationService/src/main/java/vn/edu/iuh/fit/service/RedisService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthenticationService/target/classes/vn/edu/iuh/fit/config/RedisConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AuthenticationService/target/classes/vn/edu/iuh/fit/service/RedisService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo-images/redis-client.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo-images/redis-server.PNG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthenticationService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AuthenticationService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthenticationService/src/main/java/vn/edu/iuh/fit/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthenticationService/src/main/java/vn/edu/iuh/fit/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AuthenticationService/src/main/java/vn/edu/iuh/fit/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthenticationService/src/main/java/vn/edu/iuh/fit/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthenticationService/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/AuthenticationService/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthenticationService/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/AuthenticationService/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthenticationService/target/classes/vn/edu/iuh/fit/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/AuthenticationService/target/classes/vn/edu/iuh/fit/config/SecurityConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AuthenticationService/target/classes/vn/edu/iuh/fit/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/AuthenticationService/target/classes/vn/edu/iuh/fit/controller/UserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -38,24 +31,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/KTPM_Project&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/KTPM_Project/demo-images/add-new-user.PNG",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -68,7 +61,8 @@
       <workItem from="1714606990731" duration="342000" />
       <workItem from="1714607805277" duration="817000" />
       <workItem from="1714803546648" duration="959000" />
-      <workItem from="1715056984206" duration="607000" />
+      <workItem from="1715056984206" duration="1506000" />
+      <workItem from="1715061214522" duration="211000" />
     </task>
     <servers />
   </component>

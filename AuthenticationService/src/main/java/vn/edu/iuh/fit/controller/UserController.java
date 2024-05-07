@@ -1,4 +1,6 @@
 package vn.edu.iuh.fit.controller;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import vn.edu.iuh.fit.model.AuthRequest;
 import vn.edu.iuh.fit.model.UserInfo;
 import vn.edu.iuh.fit.service.JwtService;
@@ -33,18 +35,27 @@ public class UserController {
     return "Welcome this endpoint is not secure";
   }
 
+//  @PostMapping("/addNewUser")
+//  public String addNewUser(@RequestBody UserInfo userInfo) {
+//    return service.addUser(userInfo);
+//  }
+
   @PostMapping("/addNewUser")
-  public String addNewUser(@RequestBody UserInfo userInfo) {
-    return service.addUser(userInfo);
+  public ResponseEntity<String> addNewUser(@RequestBody UserInfo userInfo) {
+    if (userInfo.getEmail() == null || userInfo.getName() == null || userInfo.getRoles() == null) {
+      return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Email, name, or roles cannot be null.");
+    } else {
+      return ResponseEntity.ok(service.addUser(userInfo));
+    }
   }
 
-  @GetMapping("/user/userProfile")
+  @GetMapping("/login/user")
   @PreAuthorize("hasAuthority('ROLE_USER')")
   public String userProfile() {
     return "Welcome to User Profile";
   }
 
-  @GetMapping("/admin/adminProfile")
+  @GetMapping("/login/admin")
   @PreAuthorize("hasAuthority('ROLE_ADMIN')")
   public String adminProfile() {
     return "Welcome to Admin Profile";
