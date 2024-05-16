@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>View Post</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .comment-box {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 20px;
+            padding: 10px;
+        }
+        .comment {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-5">
+    <a href="/post/posts" class="mt-3"><i class="fas fa-arrow-left"></i> Quay lại</a>
+
+    <div class="comment-box">
+        <h1 th:text="${post.title}" class="h5"></h1>
+        <p th:text="${post.content}"></p>
+        <small class="text-muted" th:text="'Tác giả: ' + ${post.user.name}"></small><br>
+        <small class="text-muted" th:text="'Ngày đăng: '"></small>
+        <small class="text-muted formatted-date" th:attr="data-date=${post.createdAt}"></small><br>
+    </div>
+
+    <!-- Comment Section -->
+    <div class="comment-box">
+        <h4>Comments</h4>
+        <div class="comment">
+            <p><strong>User1:</strong> Comment 1</p>
+        </div>
+        <div class="comment">
+            <p><strong>User2:</strong> Comment 2</p>
+        </div>
+        <!-- Add your comment form -->
+        <form th:action="@{/post/comment}" method="post">
+            <div class="form-group">
+                <label for="comment">Add Comment:</label>
+                <textarea class="form-control" id="comment" name="comment" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

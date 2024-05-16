@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>All Posts</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script th:inline="javascript">
+        // <![CDATA[
+        function formatDate(dateString) {
+            const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
+            return new Date(dateString).toLocaleDateString('en-GB', options);
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const dateElements = document.querySelectorAll(".formatted-date");
+            dateElements.forEach(element => {
+                const dateString = element.getAttribute("data-date");
+                element.textContent = formatDate(dateString);
+            });
+        });
+        // ]]>
+    </script>
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="mb-4">Tất Cả Bài Đăng</h1>
+    <div class="list-group">
+        <div th:each="post : ${posts}" class="list-group-item">
+            <h2 th:text="${post.title}" class="h5"></h2>
+            <p th:text="${post.content}"></p>
+            <small class="text-muted" th:text="'Tác giả: ' + ${post.user.name}"></small>
+            <br>
+            <small class="text-muted" th:text="'Ngày đăng: '"></small>
+            <small class="text-muted formatted-date" th:attr="data-date=${post.createdAt}"></small>
+            <br>
+            <div class="btn-group mt-2" role="group">
+                <a th:href="@{/post/posts/{id}(id=${post.postId})}" class="btn btn-primary btn-sm">View</a>
+                <a th:href="@{/post/edit/{id}(id=${post.postId})}" class="btn btn-secondary btn-sm">Edit</a>
+                <a th:href="@{/post/delete/{id}(id=${post.postId})}" class="btn btn-danger btn-sm">Delete</a>
+            </div>
+        </div>
+    </div>
+    <a href="/post/add" class="btn btn-success mt-4">Add New Post</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
