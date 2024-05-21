@@ -35,11 +35,6 @@ public class UserController {
     return "Welcome this endpoint is not secure";
   }
 
-//  @PostMapping("/addNewUser")
-//  public String addNewUser(@RequestBody UserInfo userInfo) {
-//    return service.addUser(userInfo);
-//  }
-
   @PostMapping("/addNewUser")
   public ResponseEntity<String> addNewUser(@RequestBody UserInfo userInfo) {
     if (userInfo.getEmail() == null || userInfo.getName() == null || userInfo.getRoles() == null) {

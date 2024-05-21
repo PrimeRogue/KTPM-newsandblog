@@ -10,10 +10,34 @@ spring:
             - Path=/api/post/**
           filters:
             - RewritePath=/api/post/(?<segment>.*), /api/post/${segment}
-#        - id: user
-#          uri: http://localhost:9092
-#          predicates:
-#            - Path=/api/user
+        - id: post-web
+          uri: http://localhost:9092
+          predicates:
+            - Path=/post/**
+          filters:
+            - RewritePath=/post/(?<segment>.*), /post/${segment}
+        - id: retry
+          uri: http://localhost:9092
+          predicates:
+            - Path=/post/retry
+          filters:
+            - name: Retry
+              args:
+                # Số lần thử lại khi gặp lỗi
+                retries: 5
+                # Các mã trạng thái HTTP mà yêu cầu sẽ được thử lại
+                statuses: REQUEST_TIMEOUT, SERVICE_UNAVAILABLE
+                # Phương thức HTTP sẽ được thử lại
+                methods: GET
+                backoff:
+                  # Thời gian chờ ban đầu trước khi thử lại lần đầu tiên
+                  firstBackoff: 3s
+                  # Thời gian chờ tối đa trước khi thử lại
+                  maxBackoff: 5s
+                  # Hệ số nhân cho thời gian chờ trước mỗi lần thử lại
+                  factor: 2
+                  # Nếu đặt là true, thời gian chờ của lần thử lại tiếp theo sẽ được tính dựa trên thời gian chờ của lần thử lại trước đó
+                  basedOnPreviousValue: false
 
 # Nhật kí
 logging:

@@ -1,21 +1,35 @@
 package vn.edu.iuh.fit.controllers;
 
+import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import vn.edu.iuh.fit.models.Post;
 import vn.edu.iuh.fit.repositories.PostRepository;
 
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @RestController
 @RequestMapping("/api/post")
 @RequiredArgsConstructor
 public class PostAPIController {
     private final PostRepository postRepository;
+    private Set<HttpStatusCode> statusCodes;
+    private Random random;
 
+    @PostConstruct
+    void init() {
+        statusCodes = new HashSet<>();
+        statusCodes.add(HttpStatusCode.valueOf(200));
+        statusCodes.add(HttpStatusCode.valueOf(400));
+        statusCodes.add(HttpStatusCode.valueOf(408));
+        statusCodes.add(HttpStatusCode.valueOf(500));
+        statusCodes.add(HttpStatusCode.valueOf(503));
+
+        random = new Random();
+    }
     // REST API: Get all posts
     @GetMapping("/posts")
     public ResponseEntity<List<Post>> getAllPosts() {
@@ -58,5 +72,19 @@ public class PostAPIController {
         } else {
             return ResponseEntity.ok(posts);
         }
+    }
+
+    @GetMapping("/retry")
+    ResponseEntity<String> retryEndpoint() {
+        HttpStatusCode httpStatusCode = randomStatus();
+        if (HttpStatusCode.valueOf(200).isSameCodeAs(httpStatusCode)) {
+            return new ResponseEntity<>("Request Success: " + httpStatusCode, httpStatusCode);
+        } else {
+            return new ResponseEntity<>("Request Failure: " + httpStatusCode, httpStatusCode);
+        }
+    }
+    private HttpStatusCode randomStatus() {
+        int randomNumber = random.nextInt(statusCodes.size());
+        return statusCodes.toArray(new HttpStatusCode[0])[randomNumber];
     }
 }

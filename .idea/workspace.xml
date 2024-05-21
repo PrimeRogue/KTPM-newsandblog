@@ -5,12 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a5cb0c96-ba05-4930-9c2b-e60a4e24fd99" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthenticationService/src/main/java/vn/edu/iuh/fit/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthenticationService/src/main/java/vn/edu/iuh/fit/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthenticationService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AuthenticationService/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AuthenticationService/src/main/java/vn/edu/iuh/fit/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthenticationService/src/main/java/vn/edu/iuh/fit/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthenticationService/target/classes/vn/edu/iuh/fit/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/AuthenticationService/target/classes/vn/edu/iuh/fit/config/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthenticationService/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/AuthenticationService/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthenticationService/target/classes/application.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/AuthenticationService/target/classes/vn/edu/iuh/fit/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/AuthenticationService/target/classes/vn/edu/iuh/fit/controller/UserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notepad.txt" beforeDir="false" afterPath="$PROJECT_DIR$/notepad.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +40,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/KTPM_Project/demo-images/add-new-user.PNG",
+    "last_opened_file_path": "E:/KTPM_Project",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -62,7 +65,11 @@
       <workItem from="1714607805277" duration="817000" />
       <workItem from="1714803546648" duration="959000" />
       <workItem from="1715056984206" duration="1506000" />
-      <workItem from="1715061214522" duration="211000" />
+      <workItem from="1715061214522" duration="832000" />
+      <workItem from="1715103571640" duration="2092000" />
+      <workItem from="1715766185714" duration="3088000" />
+      <workItem from="1715834796759" duration="3230000" />
+      <workItem from="1716306803537" duration="1850000" />
     </task>
     <servers />
   </component>

@@ -4,10 +4,33 @@ Tham khao KTPM
 [pro] 3. https://gitlab.com/kientrucphanmem_nhom27/Book_movie_tickets
 4. https://github.com/trungchanh2002/BTL_KTTKPM
 5. https://gitlab.com/Quang292001/booking-hotel
+============================================================================
+Nguồn tham khảo
+Mô hình microservice với các article:
++ Routing - Configure & Monitor Gateway Routes
++ Resilience - Retry, Circuit Breaking and Rate Limiting
 
-Cac cong nghe thay yeu cau:
-1. JWT
-2. "Redis (1 object)"
+Hướng dẫn: https://andifalk.gitbook.io/spring-cloud-gateway-workshop/hands-on-labs
+Nguồn code: https://github.com/andifalk/spring-cloud-gateway-workshop
+Nguồn code a Hiếu: https://github.com/nguyenhieu1435/www_week6
+
+
+=============================================================================
+Cấu trúc dự án
+user-service: backend service cung cấp REST API cho user (người đăng tin tức và bài viết) (tham khảo github andifalk phần product-service, customer-service)
+news-service: backend service cung cấp REST API cho news
+authentication-service: 
+
+
+Xây dựng 1 ứng dụng web Springboot theo mô hình microservice về NewsAndBlog (một nên tảng tin tức và blog).
+Các entity như sau: Category, Comment, Post, User
+Các chức năng:
++ Thêm người dùng với vai trò user, thêm người dùng với vai trò admin, đăng nhập, đăng ký
++ Đăng bài viết, xoá bài biết
++ Comment
+Sử dụng các công nghệ sau:
+1. JWT 
+2. Redis 
 3. "Retry 3-5s (API call 1 service)"
 4. "Rate Limiter client (API call 1 service)"
 5. "Circuit Breaker"
@@ -20,14 +43,182 @@ Cac cong nghe thay yeu cau:
 12. "Rate Limiter Server (API call 1 service)"
 13. Terraform or Ansible Concept and Example Basic
 
-NewsAndBlogWeb/
-├── authentication-service/        # Dịch vụ xác thực JWT
-├── redis-service/                  # Dịch vụ Redis
-├── api-gateway/                   # Cổng API
-├── news-service/                  # Dịch vụ quản lý tin tức
-├── blog-service/                  # Dịch vụ quản lý blog
-├── rate-limiter-client/           # Thư viện Rate Limiter cho client
-├── rate-limiter-server/           # Dịch vụ Rate Limiter
-├── circuit-breaker/               # Dịch vụ Circuit Breaker
-├── docker-compose.yml             # File docker-compose để triển khai tất cả các dịch vụ
-└── Jenkinsfile                    # File Jenkinsfile để triển khai CI/CD với Jenkins
+Dưới đây là phân tích chi tiết hơn về cách mà mỗi công nghệ được sử dụng trong dự án của bạn:
+
+1. JWT (JSON Web Tokens):
+Sử dụng trong auth-service để xác thực và phân quyền người dùng.
+Khi người dùng đăng nhập thành công, auth-service sẽ tạo JWT và trả về cho người dùng.
+Mỗi yêu cầu API đến các service khác sẽ được gắn kèm JWT để xác thực.
+2. Redis:
+Sử dụng trong auth-service và user-service làm cache hoặc lưu trữ tạm thời cho thông tin người dùng đã xác thực.
+3. Retry:
+Sử dụng trong các service để tái thử lại việc gọi API khi gặp lỗi, ví dụ: khi gọi API từ service A đến service B và service B không phản hồi, service A sẽ thử lại sau một khoảng thời gian nhất định.
+4. Rate Limiter client:
+Sử dụng trong các service để giới hạn số lần gọi API từ một khách hàng trong một khoảng thời gian nhất định, giúp bảo vệ service khỏi tình trạng quá tải.
+5. Circuit Breaker:
+Sử dụng để ngắt kết nối tới một dịch vụ nếu dịch vụ đó không hoạt động đúng cách, tránh việc gọi API liên tục không thành công, gây quá tải cho hệ thống.
+6. Docker All Service:
+Mỗi dịch vụ như auth-service, post-service, comment-service, user-service đều được đóng gói trong Docker container để dễ dàng triển khai và quản lý.
+7. Docker Compose:
+Sử dụng Docker Compose để định nghĩa và quản lý các service trong môi trường phát triển hoặc triển khai, đồng thời giúp khởi động cả hệ thống một cách dễ dàng bằng một lệnh duy nhất.
+8. Jenkins:
+Sử dụng Jenkins để xây dựng, kiểm thử tự động và triển khai ứng dụng, giúp tự động hóa các quy trình phát triển và triển khai.
+9. GitLab CI/CD:
+Sử dụng GitLab CI/CD để tự động hóa quy trình phát triển và triển khai từ việc push code đến GitLab, giúp kiểm soát quy trình phát triển và đảm bảo tính liên tục của phần mềm.
+10. Agile-Scrum:
+Áp dụng phương pháp Agile Scrum để quản lý dự án và phát triển sản phẩm, giúp tăng cường sự linh hoạt và tương tác trong quá trình phát triển.
+11. Deploy:
+Sử dụng Jenkins hoặc GitLab CI/CD để tự động triển khai ứng dụng, giúp giảm thiểu thời gian và công sức cần thiết cho quá trình triển khai và cập nhật ứng dụng.
+12. Rate Limiter Server:
+Dịch vụ độc lập để quản lý giới hạn tần suất gọi API từ các client, giúp bảo vệ các service khỏi tình trạng quá tải.
+13. Terraform or Ansible:
+Sử dụng để tự động hóa việc triển khai cơ sở hạ tầng hoặc cấu hình hệ thống, giúp đơn giản hóa quá trình triển khai và mở rộng hệ thống một cách linh hoạt.
+
+
+
+===========================================================================
+Prompt ChatGPT
+
+Tôi muốn xây dựng 1 hệ thống microservice Springboot về Post. Tôi có các entity sau:
+package vn.edu.iuh.fit.models;
+import jakarta.persistence.*;
+import lombok.*;
+@Entity
+@Data
+@Table(name = "Post")
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+public class Post {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "postId")
+    private int postId;
+
+    private String title;
+
+    private String content;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "userId")
+    private User user;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "categoryId")
+    private Category category;
+}
+
+
+
+package vn.edu.iuh.fit.models;
+import jakarta.persistence.*;
+import lombok.*;
+@Entity
+@Data
+@Table(name = "User")
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int userId;
+    private String username;
+    private String password;
+    private String email;
+
+}
+
+
+package vn.edu.iuh.fit.models;
+import jakarta.persistence.*;
+import lombok.*;
+@Entity
+@Data
+@Table(name = "Comment")
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+public class Comment {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int commentId;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "postId")
+    private Post post;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "userId")
+    private User user;
+
+    private String comment;
+}
+
+
+
+package vn.edu.iuh.fit.models;
+import jakarta.persistence.*;
+import lombok.*;
+@Entity
+@Data
+@Table(name = "Category")
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+public class Category {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int categoryId;
+    private String categoryName;
+}
+
+
+
+YÊU CẦU: Dựa vào đoạn code dưới đây, viết thêm cho tôi các path để thực hiện REST API
+package vn.edu.iuh.fit.controllers;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import vn.edu.iuh.fit.models.User;
+import vn.edu.iuh.fit.repositories.UserRepository;
+import org.springframework.http.HttpStatus;
+import java.util.List;
+import java.util.Optional;
+@RestController
+@RequestMapping("/api/users")
+@RequiredArgsConstructor
+public class UserController {
+    private final UserRepository userRepository;
+
+    // Lấy danh sách tất cả user
+    @GetMapping("/getListUsers")
+    public ResponseEntity<List<User>> getAll() {
+        List<User> users = userRepository.findAll();
+        return ResponseEntity.ok(users);
+    }
+
+    // Thêm user
+    @PostMapping("/createUser")
+    public ResponseEntity<User> createUser(@RequestBody User user) {
+        User savedUser = userRepository.save(user);
+        // Trả về response với user đã được lưu và HTTP status OK (200)
+        return ResponseEntity.status(HttpStatus.OK).body(savedUser);
+    }
+    // Tìm user theo ID
+    @GetMapping("/users/{userId}")
+    public Optional<User> getUserById(@PathVariable Long userId) {
+        return userRepository.findById(userId);
+    }
+}
+
+
+
+
+
+
+

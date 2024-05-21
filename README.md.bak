@@ -53,4 +53,3 @@ http://localhost:9091/api/user/users được chuyển thành http://localhost:9
 + Nếu kết quả trả về các status code khác 200 thì sẽ chuyển đến trang post/error
   ![.](demo-images/retry.PNG)
 + Ngược lại sẽ chuyển đến trang post/posts 
-  ![.](demo-images/retry-success.PNG)

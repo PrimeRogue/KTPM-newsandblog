@@ -1,7 +1,9 @@
 package vn.edu.iuh.fit.controllers;
 
+import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,15 +11,27 @@ import org.springframework.web.bind.annotation.*;
 import vn.edu.iuh.fit.models.Post;
 import vn.edu.iuh.fit.repositories.PostRepository;
 
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Controller
 @RequestMapping("/post")
 @RequiredArgsConstructor
 public class PostWEBController {
     private final PostRepository postRepository;
+    private Set<HttpStatusCode> statusCodes;
+    private Random random;
 
+    @PostConstruct
+    void init() {
+        statusCodes = new HashSet<>();
+        statusCodes.add(HttpStatusCode.valueOf(200));
+        statusCodes.add(HttpStatusCode.valueOf(400));
+        statusCodes.add(HttpStatusCode.valueOf(408));
+        statusCodes.add(HttpStatusCode.valueOf(500));
+        statusCodes.add(HttpStatusCode.valueOf(503));
+
+        random = new Random();
+    }
     // WEB: Lấy danh sách tất cả các bài viết
     @GetMapping("/posts")
     public String getAllPostsPage(Model model) {
@@ -73,5 +87,24 @@ public class PostWEBController {
             model.addAttribute("posts", posts);
             return "post/postsByUser";
         }
+    }
+
+    @GetMapping("/retry")
+    public String retryEndpoint(Model model) {
+        HttpStatusCode httpStatusCode = randomStatus();
+        if (HttpStatusCode.valueOf(200).isSameCodeAs(httpStatusCode)) {
+            List<Post> posts = postRepository.findAll();
+            model.addAttribute("posts", posts);
+            return "post/posts";
+
+        } else {
+            model.addAttribute("httpStatusCode", httpStatusCode.value());
+            return "post/error";
+        }
+
+    }
+    private HttpStatusCode randomStatus() {
+        int randomNumber = random.nextInt(statusCodes.size());
+        return statusCodes.toArray(new HttpStatusCode[0])[randomNumber];
     }
 }
