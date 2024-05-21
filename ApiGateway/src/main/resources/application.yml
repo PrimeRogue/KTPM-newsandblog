@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: ApiGateway
+  cloud:
+    gateway:
+      routes:
+        - id: post
+          uri: http://localhost:9092
+          predicates:
+            - Path=/api/post/**
+          filters:
+            - RewritePath=/api/post/(?<segment>.*), /api/post/${segment}
+#        - id: user
+#          uri: http://localhost:9092
+#          predicates:
+#            - Path=/api/user
+
+# Nhật kí
+logging:
+  level:
+    root: INFO
+    org:
+      springframework:
+        cloud:
+          gateway:
+            route:
+              RouteDefinitionLocator: INFO
+            TRACE: TRACE
+server:
+  port: 9090
