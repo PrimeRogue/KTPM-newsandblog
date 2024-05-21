@@ -4,7 +4,6 @@
 - Bùi Trần Thiên Ân
 - Nguyễn Phi Thiên
 
-<<<<<<< HEAD
 ## Run Application
 
 ### `1. Run các Service`
@@ -19,8 +18,6 @@
 http://localhost:9092/api/post/posts được chuyển thành http://localhost:9090/api/post/posts 
 http://localhost:9091/api/user/users được chuyển thành http://localhost:9090/api/user/users
 
-=======
-
 ## Run Application
 
 ### `1. Run các Service`
@@ -34,8 +31,6 @@ http://localhost:9091/api/user/users được chuyển thành http://localhost:9
 + Ví dụ:
 http://localhost:9092/api/post/posts được chuyển thành http://localhost:9090/api/post/posts 
 http://localhost:9091/api/user/users được chuyển thành http://localhost:9090/api/user/users
-
->>>>>>> 791d0b05c06e062b1a2421ac4cd4e8056b73e126
 
 ### `3. Xem Api document với Swagger UI`
 + Swagger UI là một Api document cho các Service.
