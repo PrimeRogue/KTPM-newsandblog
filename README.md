@@ -4,23 +4,28 @@
 - Bùi Trần Thiên Ân
 - Nguyễn Phi Thiên
 
-## Kiến Trúc Hệ Thống
-Hệ thống bao gồm các service chính sau đây, được triển khai dựa trên kiến trúc microservices:
 
-### 1. `Authentication Service với JWT`
-Sử dụng JWT để Xác thực (Authentication) và Phân quyền (Authorization) trong Spring Boot 3.0, dùng Spring Security 6 và MariaDB.
-Các tính năng sử dụng trong project:
-+ Thêm user mới với role là USER hoặc ADMIN, password được mã hoá.
-+ Tạo token đăng nhập.
+## Run Application
 
-### 2. `Redis database`
-Sử dụng Redis để lưu trữ dữ liệu cần được truy cập thường xuyên và nhanh chóng, nó không được dùng để lưu trữ dữ liệu lớn.
-Các tính năng sử dụng trong project:
-+ Lưu token sau khi generate token.
-+ Đọc dữ liệu token đã lưu.
-## Hướng Dẫn Chạy Project
+### `1. Run các Service`
++ BlogService (port: 9092)
++ UserService (port: 9091)
++ AuthenticationService
++ ApiGateway (port: 9090)
 
-### 1. `Authentication Service với JWT`
+### `2. Điều hướng cổng với Apigateway`
++ Gateway sẽ chuyển các port khác (9091, 9092, ...) thành cùng 1 port là 9090.
++ Ví dụ:
+http://localhost:9092/api/post/posts được chuyển thành http://localhost:9090/api/post/posts 
+http://localhost:9091/api/user/users được chuyển thành http://localhost:9090/api/user/users
+
+
+### `3. Xem Api document với Swagger UI`
++ Swagger UI là một Api document cho các Service.
++ Sau khi run BlogService, bạn có thể truy cập http://localhost:9092/swagger-ui/index.html để xem Api document của BlogService.
+
+
+### `4. Authentication Service với JWT`
 + Tạo user mới
   ![.](demo-images/add-new-user.PNG)
 + Tạo token để đăng nhập
@@ -29,7 +34,7 @@ Các tính năng sử dụng trong project:
   ![.](demo-images/login-admin.PNG)
 
 
-### 2. `Redis database`
+### `5. Lưu token với Redis database`
 + Setup Redis cho Window:
    https://www.youtube.com/watch?v=DLKzd3bvgt8
 
