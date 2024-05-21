@@ -4,19 +4,17 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: post
-          uri: http://localhost:9092
-          predicates:
-            - Path=/api/post/**
-          filters:
-            - RewritePath=/api/post/(?<segment>.*), /api/post/${segment}
         - id: post-web
           uri: http://localhost:9092
           predicates:
             - Path=/post/**
+            - Method=GET,POST,PUT,DELETE
           filters:
-            - RewritePath=/post/(?<segment>.*), /post/${segment}
-        - id: retry
+            - name: CircuitBreaker
+              args:
+                name: myCircuitBreaker
+                fallbackUri: forward:/fallback/post-fallback
+        - id: post-web-retry
           uri: http://localhost:9092
           predicates:
             - Path=/post/retry
