@@ -4,6 +4,7 @@
 - Bùi Trần Thiên Ân
 - Nguyễn Phi Thiên
 
+<<<<<<< HEAD
 ## Run Application
 
 ### `1. Run các Service`
@@ -18,6 +19,23 @@
 http://localhost:9092/api/post/posts được chuyển thành http://localhost:9090/api/post/posts 
 http://localhost:9091/api/user/users được chuyển thành http://localhost:9090/api/user/users
 
+=======
+
+## Run Application
+
+### `1. Run các Service`
++ BlogService (port: 9092)
++ UserService (port: 9091)
++ AuthenticationService
++ ApiGateway (port: 9090)
+
+### `2. Điều hướng cổng với Apigateway`
++ Gateway sẽ chuyển các port khác (9091, 9092, ...) thành cùng 1 port là 9090.
++ Ví dụ:
+http://localhost:9092/api/post/posts được chuyển thành http://localhost:9090/api/post/posts 
+http://localhost:9091/api/user/users được chuyển thành http://localhost:9090/api/user/users
+
+>>>>>>> 791d0b05c06e062b1a2421ac4cd4e8056b73e126
 
 ### `3. Xem Api document với Swagger UI`
 + Swagger UI là một Api document cho các Service.
