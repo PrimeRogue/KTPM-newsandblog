@@ -3,7 +3,8 @@
 ## Thành Viên Nhóm
 - Bùi Trần Thiên Ân
 - Nguyễn Phi Thiên
-
+## Kiến trúc hệ thống
+  ![.](demo-images/ktpm.PNG)
 ## Run Application
 
 ### `1. Run các Service`

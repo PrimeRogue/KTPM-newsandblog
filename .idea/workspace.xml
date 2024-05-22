@@ -5,30 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a5cb0c96-ba05-4930-9c2b-e60a4e24fd99" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/AuthenticationService/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthenticationService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AuthenticationService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthenticationService/src/main/java/vn/edu/iuh/fit/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthenticationService/src/main/java/vn/edu/iuh/fit/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthenticationService/src/main/java/vn/edu/iuh/fit/model/AuthRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthenticationService/src/main/java/vn/edu/iuh/fit/filter/model/AuthRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthenticationService/src/main/java/vn/edu/iuh/fit/model/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthenticationService/src/main/java/vn/edu/iuh/fit/filter/model/UserInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthenticationService/src/main/java/vn/edu/iuh/fit/repository/UserInfoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthenticationService/src/main/java/vn/edu/iuh/fit/repository/UserInfoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthenticationService/src/main/java/vn/edu/iuh/fit/service/UserInfoDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthenticationService/src/main/java/vn/edu/iuh/fit/service/UserInfoDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthenticationService/src/main/java/vn/edu/iuh/fit/service/UserInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AuthenticationService/src/main/java/vn/edu/iuh/fit/service/UserInfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthenticationService/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/AuthenticationService/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthenticationService/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/AuthenticationService/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthenticationService/target/classes/vn/edu/iuh/fit/JwtAuthServiceApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/AuthenticationService/target/classes/vn/edu/iuh/fit/JwtAuthServiceApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthenticationService/target/classes/vn/edu/iuh/fit/config/RedisConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/AuthenticationService/target/classes/vn/edu/iuh/fit/config/RedisConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthenticationService/target/classes/vn/edu/iuh/fit/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/AuthenticationService/target/classes/vn/edu/iuh/fit/config/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthenticationService/target/classes/vn/edu/iuh/fit/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/AuthenticationService/target/classes/vn/edu/iuh/fit/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthenticationService/target/classes/vn/edu/iuh/fit/filter/JwtAuthFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/AuthenticationService/target/classes/vn/edu/iuh/fit/filter/JwtAuthFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthenticationService/target/classes/vn/edu/iuh/fit/model/AuthRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthenticationService/target/classes/vn/edu/iuh/fit/model/UserInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthenticationService/target/classes/vn/edu/iuh/fit/repository/UserInfoRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/AuthenticationService/target/classes/vn/edu/iuh/fit/repository/UserInfoRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthenticationService/target/classes/vn/edu/iuh/fit/service/JwtService.class" beforeDir="false" afterPath="$PROJECT_DIR$/AuthenticationService/target/classes/vn/edu/iuh/fit/service/JwtService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthenticationService/target/classes/vn/edu/iuh/fit/service/RedisService.class" beforeDir="false" afterPath="$PROJECT_DIR$/AuthenticationService/target/classes/vn/edu/iuh/fit/service/RedisService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthenticationService/target/classes/vn/edu/iuh/fit/service/UserInfoDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/AuthenticationService/target/classes/vn/edu/iuh/fit/service/UserInfoDetails.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AuthenticationService/target/classes/vn/edu/iuh/fit/service/UserInfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/AuthenticationService/target/classes/vn/edu/iuh/fit/service/UserInfoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,24 +27,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/KTPM_Project/AuthenticationService",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/KTPM_Project/AuthenticationService&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -87,6 +65,7 @@
       <workItem from="1716306803537" duration="2820000" />
       <workItem from="1716329414381" duration="688000" />
       <workItem from="1716367465500" duration="4956000" />
+      <workItem from="1716373046709" duration="756000" />
     </task>
     <servers />
   </component>
