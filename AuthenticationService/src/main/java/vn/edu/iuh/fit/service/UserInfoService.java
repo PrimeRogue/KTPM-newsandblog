@@ -1,5 +1,5 @@
 package vn.edu.iuh.fit.service;
-import vn.edu.iuh.fit.model.UserInfo;
+import vn.edu.iuh.fit.filter.model.UserInfo;
 import vn.edu.iuh.fit.repository.UserInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;

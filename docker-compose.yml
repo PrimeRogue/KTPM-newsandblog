@@ -1,0 +1,70 @@
+version: '3.7'
+services:
+  api-gateway:
+    image: api-gateway:latest
+    build:
+      context: ./ApiGateway
+    ports:
+      - "9090:9090"
+    depends_on:
+      - authentication-service
+      - blog-service
+    environment:
+      - SPRING_PROFILES_ACTIVE=default
+    networks:
+      - ktpm-network
+
+  authentication-service:
+    image: authentication-service:latest
+    build:
+      context: ./AuthenticationService
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mariadb
+      - redis
+    environment:
+      - SPRING_PROFILES_ACTIVE=default
+      - SPRING_DATASOURCE_URL=jdbc:mariadb://mariadb:3306/blogdb
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=
+      - SPRING_REDIS_HOST=redis
+    networks:
+      - ktpm-network
+
+  blog-service:
+    image: blog-service:latest
+    build:
+      context: ./BlogService
+    ports:
+      - "9092:9092"
+    depends_on:
+      - mariadb
+    environment:
+      - SPRING_PROFILES_ACTIVE=default
+      - SPRING_DATASOURCE_URL=jdbc:mariadb://mariadb:3306/blogdb
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=
+    networks:
+      - ktpm-network
+
+  mariadb:
+    image: mariadb:10.5
+    environment:
+      - MYSQL_ROOT_PASSWORD=
+      - MYSQL_DATABASE=blogdb
+    ports:
+      - "3306:3306"
+    networks:
+      - ktpm-network
+
+  redis:
+    image: redis:6.0
+    ports:
+      - "6379:6379"
+    networks:
+      - ktpm-network
+
+networks:
+  ktpm-network:
+    driver: bridge

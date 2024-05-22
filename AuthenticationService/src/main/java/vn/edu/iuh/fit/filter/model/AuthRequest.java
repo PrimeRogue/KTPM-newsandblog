@@ -1,4 +1,4 @@
-package vn.edu.iuh.fit.model;
+package vn.edu.iuh.fit.filter.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

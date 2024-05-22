@@ -1,5 +1,5 @@
 package vn.edu.iuh.fit.service;
-import vn.edu.iuh.fit.model.UserInfo;
+import vn.edu.iuh.fit.filter.model.UserInfo;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

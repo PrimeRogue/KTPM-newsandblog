@@ -1,4 +1,4 @@
-package vn.edu.iuh.fit.model;
+package vn.edu.iuh.fit.filter.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

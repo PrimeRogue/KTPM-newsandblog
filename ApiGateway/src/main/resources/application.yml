@@ -4,6 +4,11 @@ spring:
   cloud:
     gateway:
       routes:
+        - id: auth-web
+          uri: http://localhost:9091
+          predicates:
+            - Path=/auth/**
+            - Method=GET,POST,PUT,DELETE
         - id: post-web
           uri: http://localhost:9092
           predicates:

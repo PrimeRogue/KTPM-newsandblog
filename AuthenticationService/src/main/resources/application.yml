@@ -7,7 +7,7 @@ spring:
     driver-class-name: org.mariadb.jdbc.Driver
     username: root
     password:
-    url: jdbc:mariadb://localhost:3306/NewsAndBlogDB
+    url: jdbc:mariadb://localhost:3306/blogdb
   jpa:
     show-sql: true
     hibernate:

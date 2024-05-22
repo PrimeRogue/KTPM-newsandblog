@@ -1,5 +1,5 @@
 package vn.edu.iuh.fit.repository;
-import vn.edu.iuh.fit.model.UserInfo;
+import vn.edu.iuh.fit.filter.model.UserInfo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import java.util.Optional;

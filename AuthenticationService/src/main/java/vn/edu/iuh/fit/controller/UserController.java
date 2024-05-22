@@ -1,8 +1,8 @@
 package vn.edu.iuh.fit.controller;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import vn.edu.iuh.fit.model.AuthRequest;
-import vn.edu.iuh.fit.model.UserInfo;
+import vn.edu.iuh.fit.filter.model.AuthRequest;
+import vn.edu.iuh.fit.filter.model.UserInfo;
 import vn.edu.iuh.fit.service.JwtService;
 import vn.edu.iuh.fit.service.RedisService;
 import vn.edu.iuh.fit.service.UserInfoService;
