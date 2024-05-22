@@ -4,7 +4,7 @@
 - Bùi Trần Thiên Ân
 - Nguyễn Phi Thiên
 ## Kiến trúc hệ thống
-  ![.](demo-images/ktpm.PNG)
+  ![.](demo-images/ktpm.png)
 ## Run Application
 
 ### `1. Run các Service`
