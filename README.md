@@ -28,7 +28,9 @@ http://localhost:9091/api/user/users được chuyển thành http://localhost:9
 ### `4. Authentication Service với JWT`
 + Tạo user mới
   PATH: http://localhost:8080/auth/addNewUser
+  
   METHOD: POST
+  
   BODY: {"name": "rekddy", "password": "123456", "email": "phithien2k2@gmail.com", "roles": "ROLE_ADMIN"}
   ![.](demo-images/add-new-user.PNG)
 + Tạo token để đăng nhập
