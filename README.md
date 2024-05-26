@@ -27,20 +27,29 @@ http://localhost:9091/api/user/users được chuyển thành http://localhost:9
 
 ### `4. Authentication Service với JWT`
 + Tạo user mới
+  
   PATH: http://localhost:8080/auth/addNewUser
   
   METHOD: POST
   
   BODY: {"name": "rekddy", "password": "123456", "email": "phithien2k2@gmail.com", "roles": "ROLE_ADMIN"}
+  
   ![.](demo-images/add-new-user.PNG)
 + Tạo token để đăng nhập
+  
   PATH: http://localhost:8080/auth/generateToken
+  
   METHOD: POST
+  
   BODY: {"username":"rekddy", "password":"123456"}
+  
   ![.](demo-images/generate-token.PNG)
 + Đăng nhập với quyền ADMIN
+  
   PATH: http://localhost:8080/auth/login/admin
+  
   METHOD: GET
+  
   Bearer Token
   ![.](demo-images/login-admin.PNG)
 
@@ -49,15 +58,13 @@ http://localhost:9091/api/user/users được chuyển thành http://localhost:9
    https://www.youtube.com/watch?v=DLKzd3bvgt8
 
 + Mở 1 tab cmd, run command line "redis-server" để start Redis
+  > **CMD:** redis-server
   ![.](demo-images/redis-server.PNG)
-+ Run AuthenticationService Project
-+ Mở Postman
-  POST: http://localhost:8080/auth/generateToken
-  Body --> raw --> JSON: {"username": "anshul", "password": "123"}
-  ![.](demo-images/redis-postman.PNG)
 + Mở 1 tab cmd khác, run command line "redis-cli", chạy các lệnh như hình:
+  > **CMD:** ping
+  > **CMD:** KEYS *
+  > **CMD:** GET 'keyname'
   ![.](demo-images/redis-client.PNG)
-
 
 ### `6. Retry`
 + Giả lập http://localhost:9090/post/retry có thể trả về kết quả ngẫu nhiên của các trạng thái sau: 200 (OK), 400 (Bad Request), 408 (Request Timeout), 500 (Internal Server Error), 503 (Service Unavailable)
