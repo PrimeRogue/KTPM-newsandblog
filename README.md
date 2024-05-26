@@ -27,12 +27,20 @@ http://localhost:9091/api/user/users được chuyển thành http://localhost:9
 
 ### `4. Authentication Service với JWT`
 + Tạo user mới
+  PATH: http://localhost:8080/auth/addNewUser
+  METHOD: POST
+  BODY: {"name": "rekddy", "password": "123456", "email": "phithien2k2@gmail.com", "roles": "ROLE_ADMIN"}
   ![.](demo-images/add-new-user.PNG)
 + Tạo token để đăng nhập
+  PATH: http://localhost:8080/auth/generateToken
+  METHOD: POST
+  BODY: {"username":"rekddy", "password":"123456"}
   ![.](demo-images/generate-token.PNG)
 + Đăng nhập với quyền ADMIN
+  PATH: http://localhost:8080/auth/login/admin
+  METHOD: GET
+  Bearer Token
   ![.](demo-images/login-admin.PNG)
-
 
 ### `5. Lưu token với Redis`
 + Setup Redis cho Window:
