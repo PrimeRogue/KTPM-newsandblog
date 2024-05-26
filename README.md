@@ -8,9 +8,9 @@
 ## Run Application
 
 ### `1. Run các Service`
++ RegistryService (port: 9093)
 + BlogService (port: 9092)
-+ UserService (port: 9091)
-+ AuthenticationService
++ AuthenticationService (port: 8080)
 + ApiGateway (port: 9090)
 
 ### `2. Điều hướng cổng với Apigateway`
